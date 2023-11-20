@@ -22,6 +22,7 @@ async function flipkart(title,resultArray)
     const response =await fetchAsync(url)
     console.log(response)
     const $ = cheerio.load(response);
+    console.log($.html());
     const review_divs = $('._1YokD2  ._3LWZlK');
     const product_divs = $("._4rR01T")
     const prices_div = $("._1_WHN1")
