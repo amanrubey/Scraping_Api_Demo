@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import { log } from "console";
 import axios from "axios";
 import cheerio from "cheerio";
+import fetch from "node-fetch";
 import fs from "fs";
 const app = express();
 const port  = process.env.PORT || 4000;
