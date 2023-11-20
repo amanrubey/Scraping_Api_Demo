@@ -70,6 +70,7 @@ async function snapdeal(p_names, prices, reviews, desc, urls, trs)
     let webs = "https://www.snapdeal.com"
 }
 app.get("/do", async (req, res) => {
+    try{
     let title = req.query.title;
     let filter = req.query.filter;
     let topN = req.query.topN;
@@ -104,6 +105,12 @@ app.get("/do", async (req, res) => {
     // fs.writeFileSync('output.json', myobj, 'utf-8');
     // console.log('JSON file created successfully.');
     res.send(myobj)
+    }
+    catch(err)
+    {
+        console.log(err);
+        res.send("error");
+    }
 });
 
 
