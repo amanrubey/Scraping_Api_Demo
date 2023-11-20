@@ -13,7 +13,8 @@ async function flipkart(title,resultArray)
     console.log("Im flippkart");
     let webs = "https://www.flipkart.com"
     let url = `https://www.flipkart.com/search?q=${title}`
-    const {data} =await axios.get(url)
+    const {data} =await axios.get(url);
+    console.log("Hi reached after axios line");
     const $ = cheerio.load(data);
     const review_divs = $('._1YokD2  ._3LWZlK');
     const product_divs = $("._4rR01T")
@@ -109,7 +110,7 @@ app.get("/do", async (req, res) => {
     catch(err)
     {
         console.log(err);
-        res.send("error");
+        res.send(err);
     }
 });
 
